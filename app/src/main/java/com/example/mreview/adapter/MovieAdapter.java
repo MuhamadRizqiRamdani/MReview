@@ -27,23 +27,23 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MovieAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        view =inflater.inflate(R.layout.item_film, parent, false);
+        view = inflater.inflate(R.layout.item_film, parent, false);
 
-        MyViewHolder viewHolder = new MyViewHolder(view);
+        MovieAdapter.MyViewHolder viewHolder = new MovieAdapter.MyViewHolder(view);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MovieAdapter.MyViewHolder holder, int position) {
         holder.tvTitle.setText(resultList.get(position).getTitle());
         holder.tvDescription.setText(resultList.get(position).getOverview());
         holder.tvReleaseDate.setText(resultList.get(position).getReleaseDate());
-        Glide.with(context).
-                load("https://image.tmdb.org/t/p/w185" + resultList.get(position).
-                        getPosterPath()).into(holder.imgPoster);
+        Glide.with(context).load("https://image.tmdb.org/t/p/w185" + resultList.get(position).
+                getPosterPath()).into(holder.imgPoster);
+
     }
 
     @Override
@@ -51,7 +51,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
         return resultList.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
+    public class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView imgPoster;
         TextView tvTitle, tvDescription, tvReleaseDate;
 
@@ -62,6 +62,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
             tvTitle = itemView.findViewById(R.id.tvJudul);
             tvDescription = itemView.findViewById(R.id.tvDescription);
             tvReleaseDate = itemView.findViewById(R.id.tvReleaseDate);
+
         }
     }
 }
+

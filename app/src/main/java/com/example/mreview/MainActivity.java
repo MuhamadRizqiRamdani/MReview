@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     private MovieAdapter adapter;
     private SearchView searchView;
-    String API_KEY = "https://www.themoviedb.org/";
+    String API_KEY = "496ae51827639eefc70e0591176fb9bf";
     String LANGUAGE = "en-US";
     String CATEGORY = "popular";
     int PAGE = 1;
@@ -48,9 +48,13 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<Response>() {
             @Override
             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-                List<Result> mLIst = response.body().getResults();
-                adapter = new MovieAdapter(MainActivity.this, mLIst);
-                recyclerView.setAdapter(adapter);
+                try{
+                    List<Result> mList = response.body().getResults();
+                    adapter = new MovieAdapter(MainActivity.this, mList);
+                    recyclerView.setAdapter(adapter);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
 
             }
 
