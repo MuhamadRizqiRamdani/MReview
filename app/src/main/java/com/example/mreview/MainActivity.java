@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.widget.SearchView;
 
@@ -48,18 +49,17 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<Response>() {
             @Override
             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-                try{
+
                     List<Result> mList = response.body().getResults();
                     adapter = new MovieAdapter(MainActivity.this, mList);
                     recyclerView.setAdapter(adapter);
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
+
 
             }
 
             @Override
             public void onFailure(Call<Response> call, Throwable t) {
+                Log.e("Error", t.getLocalizedMessage());
 
             }
         });
