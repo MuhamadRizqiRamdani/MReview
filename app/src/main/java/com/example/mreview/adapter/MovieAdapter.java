@@ -1,6 +1,7 @@
 package com.example.mreview.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,9 +9,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.mreview.DetailFilmActivity;
 import com.example.mreview.R;
 import com.example.mreview.model.Result;
 
@@ -33,6 +36,18 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
         view = inflater.inflate(R.layout.item_film, parent, false);
 
         MovieAdapter.MyViewHolder viewHolder = new MovieAdapter.MyViewHolder(view);
+        viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(parent.getContext(), DetailFilmActivity.class);
+                Result result = new Result();
+                result.setOriginalTitle(resultList.get(viewHolder.getAdapterPosition()).getOriginalTitle());
+                result.setOverview(resultList.get(viewHolder.getAdapterPosition()).getOverview());
+                result.setPosterPath(resultList.get(viewHolder.getAdapterPosition()).getPosterPath());
+                intent.putExtra(DetailFilmActivity.EXTRA_MOVIE, result);
+                parent.getContext().startActivity(intent);
+            }
+        });
         return viewHolder;
     }
 
@@ -54,6 +69,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
     public class MyViewHolder extends RecyclerView.ViewHolder {
         ImageView imgPoster;
         TextView tvTitle, tvDescription, tvReleaseDate;
+        CardView cardView;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -62,6 +78,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MyViewHolder
             tvTitle = itemView.findViewById(R.id.tvJudul);
             tvDescription = itemView.findViewById(R.id.tvDescription);
             tvReleaseDate = itemView.findViewById(R.id.tvReleaseDate);
+            cardView = itemView.findViewById(R.id.card);
 
         }
     }
