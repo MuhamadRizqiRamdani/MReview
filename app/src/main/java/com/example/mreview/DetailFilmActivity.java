@@ -26,6 +26,7 @@ public class DetailFilmActivity extends AppCompatActivity {
         tvReleaseDate = findViewById(R.id.tvTglRilisDetail);
         tvRating = findViewById(R.id.tvRatingDetail);
         tvDetail = findViewById(R.id.tvStoryDesc);
+        imgDetail = findViewById(R.id.imgDetail);
 
         result = getIntent().getParcelableExtra(EXTRA_MOVIE);
 
@@ -41,7 +42,7 @@ public class DetailFilmActivity extends AppCompatActivity {
         tvDetail.setText(overview);
 
         Glide.with(getApplicationContext())
-                .load("https://image.tmdb.org/t/p/w185" + image)
+                .load("https://image.tmdb.org/t/p/w500" + image)
                 .into(imgDetail);
 
     }
