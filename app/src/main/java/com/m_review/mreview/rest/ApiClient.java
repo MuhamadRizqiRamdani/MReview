@@ -1,6 +1,6 @@
-package com.example.mreview.rest;
+package com.m_review.mreview.rest;
 
-import com.example.mreview.config.ServerConfig;
+import com.m_review.mreview.config.ServerConfig;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

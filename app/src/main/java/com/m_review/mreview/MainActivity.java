@@ -1,4 +1,4 @@
-package com.example.mreview;
+package com.m_review.mreview;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,11 +9,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.widget.SearchView;
 
-import com.example.mreview.adapter.MovieAdapter;
-import com.example.mreview.model.Response;
-import com.example.mreview.model.Result;
-import com.example.mreview.rest.ApiClient;
-import com.example.mreview.rest.ApiInterface;
+import com.m_review.mreview.R;
+import com.m_review.mreview.adapter.MovieAdapter;
+import com.m_review.mreview.model.Response;
+import com.m_review.mreview.model.Result;
+import com.m_review.mreview.rest.ApiClient;
+import com.m_review.mreview.rest.ApiInterface;
 
 import java.util.List;
 

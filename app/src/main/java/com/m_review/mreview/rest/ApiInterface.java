@@ -1,8 +1,6 @@
-package com.example.mreview.rest;
+package com.m_review.mreview.rest;
 
-import com.example.mreview.model.Response;
-
-import java.util.Locale;
+import com.m_review.mreview.model.Response;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

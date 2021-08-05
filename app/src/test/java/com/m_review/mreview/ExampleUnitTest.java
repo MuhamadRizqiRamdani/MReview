@@ -1,4 +1,4 @@
-package com.example.mreview;
+package com.m_review.mreview;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.example.mreview;
+package com.m_review.mreview;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,8 +6,9 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.m_review.mreview.model.Result;
 import com.bumptech.glide.Glide;
-import com.example.mreview.model.Result;
+import com.m_review.mreview.R;
 
 public class DetailFilmActivity extends AppCompatActivity {
     public static final String EXTRA_MOVIE ="extra_movie";

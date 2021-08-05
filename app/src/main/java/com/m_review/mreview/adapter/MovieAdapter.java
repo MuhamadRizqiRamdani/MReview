@@ -1,4 +1,4 @@
-package com.example.mreview.adapter;
+package com.m_review.mreview.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,9 +13,9 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.mreview.DetailFilmActivity;
-import com.example.mreview.R;
-import com.example.mreview.model.Result;
+import com.m_review.mreview.DetailFilmActivity;
+import com.m_review.mreview.R;
+import com.m_review.mreview.model.Result;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.mreview.model;
+package com.m_review.mreview.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

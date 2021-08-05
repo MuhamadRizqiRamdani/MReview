@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.example.mreview"
+        applicationId "com.m_review.mreview"
         minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
